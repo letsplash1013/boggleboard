@@ -1,0 +1,69 @@
+Summary
+=======
+test2_file_modified (test2.Test2BoggleCube) ....... ok
+test2_get_faces (test2.Test2BoggleCube) ........... ok
+test2_get_id (test2.Test2BoggleCube) .............. ok
+test2_initial_get_letter (test2.Test2BoggleCube) ... ok
+test2_initial_status (test2.Test2BoggleCube) ...... ok
+test2_roll (test2.Test2BoggleCube) ................ ok
+test2_select (test2.Test2BoggleCube) .............. ok
+test2_set_status (test2.Test2BoggleCube) .......... ok
+test3_adjacent (test3.Test3BoggleBoard) ........... ok
+test3_adjacent_again (test3.Test3BoggleBoard) ..... ok
+test3_file_modified (test3.Test3BoggleBoard) ...... ok
+test3_non_adjacent (test3.Test3BoggleBoard) ....... ok
+test3_report_selection (test3.Test3BoggleBoard) ... failed
+test3_report_selection_gone_awry (test3.Test3BoggleBoard) ... ok
+test3_selection (test3.Test3BoggleBoard) .......... ok
+test3_shake_and_get (test3.Test3BoggleBoard) ...... ok
+
+Details
+=======
+
+Failed: test3_report_selection (test3.Test3BoggleBoard)
+----------------------------------------------------------------------
+   106     def test3_report_selection(self):
+   107         if self._modified:
+   108             self.board.shake_cubes(shuffler=self.shuffler, die=self.die)
+   109             self.board.report_selection(6)
+   110             self.board.report_selection(7)
+   111             self.board.report_selection(8)
+   112             self.assertEqual('MIN', self.board.get_word_so_far())
+   113             self.board.report_selection(8)
+   114             self.assertEqual(['MIN'], self.board.get_completed_words())
+   115             self.assertEqual('', self.board.get_word_so_far())
+   116         else: self.skipTest(MSG)
+----------------------------------------------------------------------
+Line 112 resulted in:
+  AssertionError: 'MIN' != 'MI'
+  - MIN
+  ?   -
+  + MI
+  
+
+Full Trace:
+  File "/Users/lida/courses-local/cs134-s23/grading/lab09/testing/part1/test3.py", line 112, in test3_report_selection
+    self.assertEqual('MIN', self.board.get_word_so_far())
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/timeout_decorator/timeout_decorator.py", line 82, in new_function
+    return function(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/case.py", line 831, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/timeout_decorator/timeout_decorator.py", line 82, in new_function
+    return function(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/case.py", line 1211, in assertMultiLineEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/timeout_decorator/timeout_decorator.py", line 82, in new_function
+    return function(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/case.py", line 670, in fail
+    raise self.failureException(msg)
+
+Code containing error:
+   668     def fail(self, msg=None):
+   669         """Fail immediately, with the given message."""
+   670         raise self.failureException(msg)
+
+
+
+
+---
+Created by lida at 2023-04-28 12:07:28

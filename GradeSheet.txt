@@ -1,0 +1,29 @@
+GRADE SHEET FOR CS134 LAB 9 ("Boggle!"):
+
+Requirements of this lab:
+   Part 1: Text Version Of Boggle
+      * Code does not use unnecessary loops or nested code blocks
+      * Code makes reasonable design choices for extra attributes/helper methods
+      * Code makes good use of variable names, and is clear and readable
+      * Comments are appropriately used to explain hard-to-follow logic
+      * Correctly implements Part 1A (BoggleCube methods)
+      * Correctly implements Part 1B (BoggleBoard methods)
+      * Correctly implements Part 1C (communication between cube and board)
+      * Each function has a return type that matches its docstring
+      * Passes our unit tests
+
+   Part 2: Boggle With Graphics
+      * Code does not use unnecessary loops or nested code blocks
+      * Code makes reasonable design choices for extra attributes/helper methods
+      * Code makes good use of variable names, and is clear and readable
+      * Comments are appropriately used to explain hard-to-follow logic
+      * Correctly implements Part 2A (CubeGraphic and grid methods)
+      * Correctly implements Part 2B (specializing CubeGraphic)
+      * Correctly implements Part 2C (completing BoggleGame)
+      * Each function has a return type that matches its docstring
+      * Passes our unit tests
+      
+Grade:
+
+Comments from Graders:
+
